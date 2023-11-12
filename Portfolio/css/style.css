@@ -6,7 +6,7 @@
 -->
 
 /* Reset */
-body, h1, h2, h3, nav, ul, li, a, main, footer, img {
+body, h1, h2, h3, nav, ul, li, a, main, footer, img, section, article, figure, figcaption {
     margin: 0;
     padding: 0;
     border: 0;
@@ -26,6 +26,7 @@ header {
     color: white;
     padding: 20px;
     text-align: center;
+    font-family: 'Edu TAS Beginner', cursive;
 }
 
 header img {
@@ -44,6 +45,7 @@ nav ul {
     padding: 5px;
     text-align: center;
     margin: 0;
+    border-radius: 10px;
 }
 
 nav li {
@@ -59,20 +61,46 @@ nav a {
 }
 
 nav a:hover {
-    background-color: #ddd;
+    background-color: #a4aab0;
     color: black;
+    border-radius: 1px;
+}
+
+/* Nav Class Styles */
+
+.nav-menu ul {
+    list-style-type: none;
+    text-align: center;
+    padding: 10px;
+}
+
+.nav-menu li {
+    display: inline;
+    margin: 0 10px;
+}
+
+.nav-menu a {
+    text-decoration: none;
+    color: white;
+    font-size: 16px;
 }
 
 /* Main Styles */
 main {
     margin: 10px;
-    padding: 100px;
+    padding: 75px;
     background-color: #EFE6E4;
 }
 
-main p {
-	padding-bottom: 100px;
+
+/* Class Styles for Main Content */
+.main-content {
+    padding: 5px;
+    font-size: 20px;
+    line-height: 1.6;
+    color: #333;
 }
+
 
 /* Footer Styles */
 footer {
@@ -98,4 +126,78 @@ footer a:hover {
 img {
     max-width: 100%;
     display: block;
+}
+
+/* Viewport, This Works for Mobile, and Tablets. */ 
+@media screen and (max-width: 1300px) {
+    .nav-menu li {
+        display: block;
+        margin: 6px;
+        text-align: center;
+        line-height: 1.1;      
+    }
+
+.nav-menu li a {
+        width: 50px
+        padding: 0px;
+    }
+
+
+.main-content {
+        font-size: 20px;
+    }
+}
+
+/* Desktop */
+@media screen and (min-width: 1301px) {
+    /* Button Styles */
+    .nav-menu {
+        
+        color: white;
+        padding: 10px 20px;
+        text-align: center;
+        text-decoration: none;
+        margin: 4px 2px;
+        cursor: help;
+        border: none;
+        border-radius: 5px;
+        
+    }  
+/* Dynamic Pseudo-Class: Hover */
+.nav-menu li a:hover {
+        color: #bd282a; 
+        transition: color .5s ease;
+}
+    }
+
+/* Grid layout */
+
+.grid-container {
+ /* Shadowed text */
+    color: #333;
+    text-shadow: 2px 2px 4px #999;
+    box-shadow: 3px 3px 5px 0 rgba(0, 0, 0, 0.3); 
+    padding: 20px;
+    margin: 10px;
+     
+display: grid;
+    grid-template-columns: repeat(3, 1fr); /* Creates 3 columns of equal width */
+    grid-gap: 10px; /* Space between rows and columns */ 
+}
+
+.grid-container div:nth-child(1) {
+    grid-column: 1 / 2;
+    grid-row: 1 / 2;
+}
+
+.grid-container div:nth-child(2) {
+    grid-column: 2 / 3;
+    grid-row: 1 / 2;
+}
+
+@media screen and (max-width: 600px) {
+    .grid-container {
+        grid-template-columns: 1fr; /* Stacks items in one column on small screens */
+    }
+}
 }
