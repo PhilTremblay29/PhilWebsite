@@ -21,5 +21,25 @@
 
     <!-- Main content area, This is where the main content of the website is -->
     <main>
+
+<form action="submit_form.php" method="post">
+    <label for="name">Name:</label><br>
+    <input type="text" id="name" name="name"><br>
+
+    <label for="email">Email:</label><br>
+    <input type="email" id="email" name="email"><br>
+
+    <label for="birthdate">Today's Date:</label><br>
+    <input type="date" id="birthdate" name="birthdate"><br>
+
+    <label for="post">Blog Post:</label><br>
+    <textarea id="post" name="post"></textarea><br>
+
+    <input type="checkbox" id="subscribe" name="subscribe" value="blogpost">
+    <label for="subscribe">Subscribe to Blog</label><br>
+
+    <input type="submit" value="Submit">
+</form>
+
     </main>
 </html>
