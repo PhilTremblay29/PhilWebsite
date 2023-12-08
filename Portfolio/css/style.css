@@ -34,7 +34,7 @@ transition: transform 0.3s ease;
 }
 
 figure:hover figcaption {
-transform: scale(1.5); /* Slightly enlarge the content area */
+transform: scale(1.2); /* Slightly enlarge the content area */
 }
 
 header img {
@@ -134,6 +134,38 @@ footer a {
 footer a:hover {
     text-decoration: underline;
 }
+
+.social-media-icons {
+    margin-top: 10px;
+    text-align: center;
+}
+
+.social-media-icons img {
+    width: 24px; 
+    height: auto;
+    margin: 0 5px; 
+    vertical-align: middle; 
+}
+
+.social-media-icons a {
+    display: inline-block; 
+}
+
+.social-media-icons a:hover img {
+    opacity: 0.8;
+}
+
+#close-footer {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    padding: 5px 10px;
+    background: #f00; /* Red background for visibility */
+    color: #fff; /* White text */
+    border: none;
+    cursor: pointer;
+}
+
 
 /* Responsive Image */
 img {

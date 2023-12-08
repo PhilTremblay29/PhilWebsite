@@ -9,3 +9,7 @@ else
         menu.style.display = "block";
     }
 }
+
+function closeFooter() {
+    document.getElementById('site-footer').style.display = 'none';
+}
