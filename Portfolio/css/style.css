@@ -29,6 +29,14 @@ header {
     font-family: 'Edu TAS Beginner', cursive;
 }
 
+figure figcaption {
+transition: transform 0.3s ease;
+}
+
+figure:hover figcaption {
+transform: scale(1.5); /* Slightly enlarge the content area */
+}
+
 header img {
     border-radius: 50%;
     display: block;
@@ -99,6 +107,11 @@ main {
     font-size: 20px;
     line-height: 1.6;
     color: #333;
+    transition: transform 0.3s ease;
+}
+
+.main-content:hover {
+    transform: scale(1.02); /* Slightly enlarge the content area */
 }
 
 
@@ -171,18 +184,55 @@ input[type="submit"]:hover {
     background-color: #45a049;
 }
 
+/* Hamburger Menu */
+#hamburger-menu {
+    cursor: pointer;
+    display: block; 
+    width: 30px; 
+}
+
+.bar {
+    height: 3px; 
+    background-color: #333; 
+    margin: 6px 0;
+    transition: 0.4s;
+}
+
+#hamburger-menu .bar {
+    transition: transform 0.3s ease;
+}
+
+#hamburger-menu.active .bar:nth-child(1) {
+    transform: rotate(45deg) translate(5px, 5px); /* Top bar rotates and moves into a 'close' icon position */
+}
+
+#hamburger-menu.active .bar:nth-child(2) {
+    opacity: 0; /* Middle bar fades away */
+}
+
+#hamburger-menu.active .bar:nth-child(3) {
+    transform: rotate(-45deg) translate(5px, -5px); /* Bottom bar rotates to form a 'close' icon */
+}
+
 /* Viewport, This Works for Mobile, and Tablets. */ 
 @media screen and (max-width: 1300px) {
-    .nav-menu li {
-        display: block;
-        margin: 6px;
+
+    .nav-menu {
+        display: none;
+       
+     }
+
+    .nav-menu ul {
+        
+        margin: 5px;
         text-align: center;
         line-height: 1.1;      
     }
 
-.nav-menu li a {
+     .nav-menu ul a {
         width: 50px
-        padding: 0px;
+        padding: 200x;
+        
     }
 
 
@@ -217,8 +267,13 @@ textarea {
         cursor: help;
         border: none;
         border-radius: 5px;
-        
+
     }  
+
+#hamburger-menu {
+        display: none; 
+    }
+
 
 /* Dynamic Pseudo-Class: Hover */
 .nav-menu li a:hover {
@@ -256,7 +311,7 @@ input[type="text"],
     margin: 10px;
      
 display: grid;
-    grid-template-columns: repeat(3, 1fr); /* Creates 3 columns of equal width */
+    grid-template-columns: repeat(3, 1fr); 
     grid-gap: 10px; /* Space between rows and columns */ 
 }
 
@@ -272,7 +327,7 @@ display: grid;
 
 @media screen and (max-width: 600px) {
     .grid-container {
-        grid-template-columns: 1fr; /* Stacks items in one column on small screens */
+        grid-template-columns: 1fr; 
     }
 }
 }
